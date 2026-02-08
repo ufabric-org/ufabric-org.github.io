@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css" />
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: 'uFabric.org',
+      repo: 'https://github.com/ufabric-org/',
+      loadSidebar: "sidebar.md",
+      subMaxLevel: 2,
+      coverpage: "coverpage.md",
+      onlyCover: true,
+      plugins: [
+        function pageFooter(hook, vm) {
+          hook.afterEach(function (html, next) {
+            const footer = `
+              <hr/>
+              <footer style="text-align: center; font-size: 0.9em; color: #888;">
+                <p><strong>uFabric</strong> - Enhancing human capabilities through AI</p>
+                <p><strong>© 2026 </strong><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a></p>
+              </footer>
+            `;
+            next(html + footer);
+          });
+        }
+      ],
+    }
+  </script>
+  <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+</body>
+</html>
