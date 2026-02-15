@@ -104,7 +104,7 @@ def shift_headings(markdown: str, levels: int = 1) -> str:
 
 def docsify_route(path: str) -> str:
     cleaned = path.strip().lstrip("./")
-    return f"#/{cleaned}"
+    return f"../{cleaned}"
 
 
 def read_sources(path: Path) -> list[dict[str, Any]]:
@@ -172,9 +172,9 @@ def build_page(sources: list[dict[str, Any]], timeout: int, token: str | None) -
     lines.append("")
     lines.append("Source registry: `ufabric-org/projects-sync/sources.md`")
     lines.append("")
-    lines.append("Sync operations docs: [`ufabric-org/projects-sync/README.md`](#/ufabric-org/projects-sync/README.md)")
+    lines.append("Sync operations docs: [`ufabric-org/projects-sync/README.md`](../ufabric-org/projects-sync/README.md)")
     lines.append("")
-    lines.append("New project setup: [`ufabric-org/projects-sync/NEW_PROJECT_SETUP.md`](#/ufabric-org/projects-sync/NEW_PROJECT_SETUP.md)")
+    lines.append("New project setup: [`ufabric-org/projects-sync/NEW_PROJECT_SETUP.md`](../ufabric-org/projects-sync/NEW_PROJECT_SETUP.md)")
     lines.append("")
     lines.append("To join this page, publish a report file and add your repo entry to the source registry.")
     lines.append("")
