@@ -20,3 +20,13 @@ Financial contributions are used to support:
 - research time
 - technical infrastructure
 - documentation and open dissemination
+
+## Projects reporting
+
+For public project progress visualization, see:
+
+- [Projects](projects.md)
+
+Operational sync documentation is maintained under:
+
+- `ufabric-org/projects-sync/`

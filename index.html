@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>uFabric.org</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Description">
+  <meta name="description" content="uFabric.org - Enhancing human capabilities through AI">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css" />
 </head>
@@ -14,6 +14,11 @@
     window.$docsify = {
       name: 'uFabric.org',
       repo: 'https://github.com/ufabric-org/',
+      alias: {
+        '/.*/sidebar.md': '/content/sidebar.md',
+        '/projects': '/content/projects.md',
+        '/projects/': '/content/projects.md',
+      },
       loadSidebar: "sidebar.md",
       subMaxLevel: 2,
       coverpage: "coverpage.md",
