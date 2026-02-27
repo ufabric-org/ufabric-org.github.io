@@ -1,4 +1,4 @@
-# creo el comando phony serve
+# Define phony targets.
 .PHONY: serve projects
 
 serve:

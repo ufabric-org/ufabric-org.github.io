@@ -1,0 +1,20 @@
+Polaris (upstream): ufabric-org/project-polaris
+Base URL: https://raw.githubusercontent.com/ufabric-org/project-polaris/refs/heads/main/
+Revision (commit SHA or tag): refs/heads/main (unpinned; commit SHA unavailable due to intermittent DNS resolution in this environment)
+Copied on: 2026-02-27
+
+Vendored skills (upstream-managed copies)
+- Polaris:
+  - skills/ufabric-code-review/ (copied into `./.agents/skills/`, `./.agent/skills/`, `./.claude/skills/`)
+- Third-party: none
+
+Sync procedure (copy + sync)
+1) Choose a Polaris revision (tag/SHA) to sync from.
+2) Re-copy the skill directories from Polaris into this repo:
+   - From Polaris: `skills/ufabric-code-review/`
+   - To this repo:
+     - `./.agents/skills/ufabric-code-review/`
+     - `./.agent/skills/ufabric-code-review/`
+     - `./.claude/skills/ufabric-code-review/`
+3) Update this file with the chosen Polaris revision and the copy date.
+4) Treat the vendored copies as upstream-managed: do not local-edit; change Polaris first, then re-copy.
