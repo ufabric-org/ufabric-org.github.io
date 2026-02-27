@@ -102,11 +102,6 @@ def shift_headings(markdown: str, levels: int = 1) -> str:
     return "\n".join(shifted)
 
 
-def docsify_route(path: str) -> str:
-    cleaned = path.strip().lstrip("./")
-    return f"../{cleaned}"
-
-
 def read_sources(path: Path) -> list[dict[str, Any]]:
     lines = [line.strip() for line in path.read_text(encoding="utf-8").splitlines()]
     table_lines = [line for line in lines if line.startswith("|") and line.endswith("|")]
@@ -164,17 +159,26 @@ def get_local_last_commit_date(path: str) -> str | None:
     return value or None
 
 
-def build_page(sources: list[dict[str, Any]], timeout: int, token: str | None) -> str:
+def docsify_route_from(output_path: Path, target_path: str) -> str:
+    rel = os.path.relpath(target_path, start=output_path.parent)
+    return Path(rel).as_posix()
+
+
+def build_page(sources: list[dict[str, Any]], timeout: int, token: str | None, output_path: Path) -> str:
     lines: list[str] = []
     lines.append("# Projects")
+    lines.append("")
+    lines.append("<!-- GENERATED FILE. Do not edit directly; run `make projects`. -->")
     lines.append("")
     lines.append("This page aggregates public markdown progress reports from uFabric projects.")
     lines.append("")
     lines.append("Source registry: `ufabric-org/projects-sync/sources.md`")
     lines.append("")
-    lines.append("Sync operations docs: [`ufabric-org/projects-sync/README.md`](../ufabric-org/projects-sync/README.md)")
+    sync_readme = docsify_route_from(output_path, "ufabric-org/projects-sync/README.md")
+    lines.append(f"Sync operations docs: [`ufabric-org/projects-sync/README.md`]({sync_readme})")
     lines.append("")
-    lines.append("New project setup: [`ufabric-org/projects-sync/NEW_PROJECT_SETUP.md`](../ufabric-org/projects-sync/NEW_PROJECT_SETUP.md)")
+    setup_doc = docsify_route_from(output_path, "ufabric-org/projects-sync/NEW_PROJECT_SETUP.md")
+    lines.append(f"New project setup: [`ufabric-org/projects-sync/NEW_PROJECT_SETUP.md`]({setup_doc})")
     lines.append("")
     lines.append("To join this page, publish a report file and add your repo entry to the source registry.")
     lines.append("")
@@ -199,13 +203,15 @@ def build_page(sources: list[dict[str, Any]], timeout: int, token: str | None) -
         lines.append(f"- Branch: `{branch}`")
         lines.append(f"- Visibility: `{visibility}`")
         if local_path and Path(local_path).exists():
-            link = docsify_route(local_path)
+            link = docsify_route_from(output_path, local_path)
             lines.append(f"- Report file: local snapshot [`{local_path}`]({link})")
         else:
             lines.append(f"- Report file: [`{report_path}`]({raw_url})")
 
         last_commit_date = None
-        if visibility == "public":
+        if local_path and Path(local_path).exists():
+            last_commit_date = get_local_last_commit_date(local_path)
+        elif visibility == "public":
             try:
                 last_commit_date = get_last_commit_date(
                     repo=repo,
@@ -218,15 +224,9 @@ def build_page(sources: list[dict[str, Any]], timeout: int, token: str | None) -
                 last_commit_date = None
 
         if last_commit_date:
-            lines.append(f"- Last report commit (UTC): `{last_commit_date}`")
-        elif local_path and Path(local_path).exists():
-            local_commit = get_local_last_commit_date(local_path)
-            if local_commit:
-                lines.append(f"- Last report commit (UTC): `{local_commit}`")
-            else:
-                lines.append("- Last report commit (UTC): `unavailable`")
+            lines.append(f"- Last report commit: `{last_commit_date}`")
         else:
-            lines.append("- Last report commit (UTC): `unavailable`")
+            lines.append("- Last report commit: `unavailable`")
         lines.append("")
 
         # Local path wins when present so this repo can preview uncommitted report edits.
@@ -278,6 +278,7 @@ def main() -> int:
             sources=sources,
             timeout=args.timeout,
             token=token,
+            output_path=output_path,
         )
     except Exception as exc:
         print(f"error: failed building projects page: {exc}", file=sys.stderr)

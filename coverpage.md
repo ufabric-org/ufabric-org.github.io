@@ -4,4 +4,4 @@
 
 > Enhancing human capabilities through Artificial Intelligence
 
-[Learn more](content/about)
+[Learn more](about.md)

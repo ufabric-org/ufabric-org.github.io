@@ -2,7 +2,7 @@
 
 uFabric organizes its work around open research lines, which may lead to publications, documented prototypes, tools, or methodological materials.
 
-Example research lines
+## Example research lines
 
 - **cognitive augmentation and decision support**  
 How AI systems can assist complex human processes without reducing autonomy or understanding.

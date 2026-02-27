@@ -2,7 +2,7 @@
 
 Our mission is to contribute to the enhancement of human capabilities through artificial intelligence, by means of research, infrastructure, and practices that place humans at the center.
 
-We seek to make the use of AI understandable, evaluable, and governable, avoiding purely instrumental or extractive approaches.
+We seek to make the use of AI understandable, assessable, and governable, avoiding purely instrumental or extractive approaches.
 
 Our principles:
 

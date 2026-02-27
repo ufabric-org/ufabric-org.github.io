@@ -1,6 +1,6 @@
 # Collaboration
 
-uFabric operates as a collaborative organization, we welcome collaboration from:
+uFabric operates as a collaborative organization. We welcome collaboration from:
 
 - researchers
 - technical professionals

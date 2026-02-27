@@ -1,12 +1,14 @@
 # Projects
 
+<!-- GENERATED FILE. Do not edit directly; run `make projects`. -->
+
 This page aggregates public markdown progress reports from uFabric projects.
 
 Source registry: `ufabric-org/projects-sync/sources.md`
 
-Sync operations docs: [`ufabric-org/projects-sync/README.md`](uFabric%20Projects/ufabric.org/ufabric-org/projects-sync/README.md)
+Sync operations docs: [`ufabric-org/projects-sync/README.md`](../ufabric-org/projects-sync/README.md)
 
-New project setup: [`ufabric-org/projects-sync/NEW_PROJECT_SETUP.md`](NEW_PROJECT_SETUP.md)
+New project setup: [`ufabric-org/projects-sync/NEW_PROJECT_SETUP.md`](../ufabric-org/projects-sync/NEW_PROJECT_SETUP.md)
 
 To join this page, publish a report file and add your repo entry to the source registry.
 
@@ -15,8 +17,8 @@ To join this page, publish a report file and add your repo entry to the source r
 - Repository: private source (`ufabric-org/project-bigbang`)
 - Branch: `main`
 - Visibility: `private`
-- Report file: local snapshot [`ufabric-org/projects-sync/reports/private/project-bigbang.md`](project-bigbang.md)
-- Last report commit (UTC): `2026-02-15T15:07:59-03:00`
+- Report file: local snapshot [`ufabric-org/projects-sync/reports/private/project-bigbang.md`](../ufabric-org/projects-sync/reports/private/project-bigbang.md)
+- Last report commit: `2026-02-15T15:07:59-03:00`
 
 - project: project-bigbang
 - repository: ufabric-org/project-bigbang
@@ -65,8 +67,8 @@ No critical blockers were reported in this cycle.
 - Repository: [ufabric-org/project-pulsar](https://github.com/ufabric-org/project-pulsar)
 - Branch: `main`
 - Visibility: `public`
-- Report file: local snapshot [`ufabric-org/projects-sync/reports/public/project-pulsar.md`](project-pulsar.md)
-- Last report commit (UTC): `2026-02-15T14:50:54-03:00`
+- Report file: local snapshot [`ufabric-org/projects-sync/reports/public/project-pulsar.md`](../ufabric-org/projects-sync/reports/public/project-pulsar.md)
+- Last report commit: `2026-02-15T14:50:54-03:00`
 
 - project: project-pulsar
 - repository: ufabric-org/project-pulsar
@@ -101,8 +103,8 @@ No critical blockers were reported in this cycle.
 - Repository: [ufabric-org/project-quark](https://github.com/ufabric-org/project-quark)
 - Branch: `main`
 - Visibility: `public`
-- Report file: local snapshot [`ufabric-org/projects-sync/reports/public/project-quark.md`](project-quark.md)
-- Last report commit (UTC): `2026-02-15T14:50:54-03:00`
+- Report file: local snapshot [`ufabric-org/projects-sync/reports/public/project-quark.md`](../ufabric-org/projects-sync/reports/public/project-quark.md)
+- Last report commit: `2026-02-15T14:50:54-03:00`
 
 - project: project-quark
 - repository: ufabric-org/project-quark
@@ -137,8 +139,8 @@ No critical blockers were reported in this cycle.
 - Repository: [ufabric-org/ufabric.org](https://github.com/ufabric-org/ufabric.org)
 - Branch: `main`
 - Visibility: `public`
-- Report file: local snapshot [`ufabric-org/ufabric-progress.md`](uFabric%20Projects/ufabric.org/ufabric-org/ufabric-progress.md)
-- Last report commit (UTC): `2026-02-15T14:50:54-03:00`
+- Report file: local snapshot [`ufabric-org/ufabric-progress.md`](../ufabric-org/ufabric-progress.md)
+- Last report commit: `2026-02-15T14:50:54-03:00`
 
 - project: ufabric.org
 - repository: ufabric-org/ufabric.org

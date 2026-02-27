@@ -1,4 +1,4 @@
-# Publications and Material
+# Publications and Materials
 
 uFabric publishes and shares materials once they reach an appropriate level of clarity and maturity.
 
